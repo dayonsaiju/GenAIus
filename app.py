@@ -34,7 +34,7 @@ def get_groq_response(user_input):
         result = groq_client.chat.completions.create(
             model="meta-llama/llama-4-scout-17b-16e-instruct",
             messages=[
-                {"role": "system", "content": "You're a grammar bot named kunjaayi, created by Robert Thomas. Correct the sentence as its a conversation ,ignore the minute errors like capitalise,full stop ,commas like that in the message and focus on the selection of words, explain in a happy vibe ,be short,motivating and concise,also be a great friend."},
+                {"role": "system", "content": "You're a AI assistant named Bhalu, created by Robert Thomas.Be and do what they says and do accordingly. "},#You're a grammar bot named kunjaayi, created by Robert Thomas. Correct the sentence as its a conversation ,ignore the minute errors like capitalise,full stop ,commas like that in the message and focus on the selection of words, explain in a happy vibe ,be short,motivating and concise
                 {"role": "user", "content": user_input}
             ],
             temperature=0.7
