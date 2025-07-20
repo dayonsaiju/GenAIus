@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaAI</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    body { background: #f8fafc; }
+    .main-hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; }
+    .main-hero h1 { font-size: 2.8rem; font-weight: 800; text-align: center; margin-bottom: 1rem; }
+    .main-hero .highlight { color: #2563eb; }
+    .main-hero p { color: #64748b; font-size: 1.15rem; text-align: center; max-width: 600px; margin-bottom: 2rem; }
+    .main-hero .hero-btns { display: flex; gap: 1rem; justify-content: center; }
+    .hero-btn { padding: 0.9rem 2.2rem; font-size: 1.1rem; border-radius: 8px; font-weight: 600; border: 2px solid #2563eb; background: #fff; color: #2563eb; transition: 0.2s; cursor: pointer; }
+    .hero-btn.primary { background: #2563eb; color: #fff; }
+    .hero-btn:hover { box-shadow: 0 2px 8px rgba(37,99,235,0.08); transform: translateY(-2px); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem 1.2rem 2rem; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+    .navbar .logo { font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 0.5rem; color: #2563eb; }
+    .navbar .nav-links { display: flex; gap: 2rem; }
+    .navbar .nav-links a { color: #334155; font-weight: 500; font-size: 1.05rem; transition: color 0.2s; }
+    .navbar .nav-links a:hover { color: #2563eb; }
+    @media (max-width: 700px) {
+      .main-hero h1 { font-size: 2rem; }
+      .main-hero p { font-size: 1rem; }
+      .navbar { flex-direction: column; gap: 0.5rem; padding: 1rem; }
+      .navbar .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🧠 LinguaAI</div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div id="theme-toggle" class="theme-switch">
+        <input type="checkbox" id="toggle-switch" />
+        <label for="toggle-switch" class="switch-label">
+          <span class="switch-ball"></span>
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+        </label>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <main class="main-hero">
+    <h1>Master Languages with <br><span class="highlight">AI-Powered Training</span></h1>
+    <p>
+      Enhance your language skills and ace your interviews with personalized AI coaching. Practice conversations, improve pronunciation, and build confidence.
+    </p>
+    <div class="hero-btns">
+      <a class="hero-btn primary" href="/language-training">&#128196; Language Trainer</a>
+      <a class="hero-btn" href="/interview">&#128172; Interview Helper</a>
+    </div>
+  </main>
+  <script src="/static/script.js"></script>
+</body>
+</html> 

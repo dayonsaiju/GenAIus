@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="center-box">
+    <h2>Choose your environment:</h2>
+    <form method="post">
+        {% for env in environments %}
+            <button type="submit" name="environment" value="{{ env.id }}" class="btn">{{ env.name }}</button>
+        {% endfor %}
+    </form>
+    <a href="/" class="btn secondary">Back</a>
+</div>
+{% endblock %} 

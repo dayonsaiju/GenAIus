@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="chat-container">
+    <h2>Environment: {{ environment|capitalize }}</h2>
+    <div id="chat-history">
+        {% for msg in chat_history %}
+            <div class="msg {{ msg.role }}">{{ msg.role|capitalize }}: {{ msg.content }}</div>
+        {% endfor %}
+    </div>
+    <form id="chat-form" method="post">
+        <input type="text" name="user_input" id="user_input" placeholder="Type your message..." autocomplete="off" required>
+        <button type="submit" class="btn">Send</button>
+    </form>
+    <audio id="audio-player" controls style="display:none;"></audio>
+    <a href="/interaction" class="btn secondary">Change Environment</a>
+    <a href="/" class="btn secondary">Back</a>
+</div>
+<script src="/static/main.js"></script>
+<script>setupChatForm('/interaction/chat');</script>
+{% endblock %} 

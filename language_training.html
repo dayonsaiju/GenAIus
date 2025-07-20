@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Language Training - LinguaAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🧠 <span>LinguaAI</span></div>
+    <div style="position:absolute;top:1.2rem;right:7.5rem;z-index:2;">
+      <div id="theme-toggle" class="theme-switch">
+        <input type="checkbox" id="toggle-switch" />
+        <label for="toggle-switch" class="switch-label">
+          <span class="switch-ball"></span>
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+        </label>
+      </div>
+    </div>
+    <a href="/" class="btn secondary" style="float:right;margin:1rem;">Home</a>
+  </header>
+  <main>
+    <div class="center-card">
+      <h2 class="training-title">Language Training</h2>
+      <form id="training-form">
+        <div class="form-group">
+          <label for="language-select">Choose a language:</label>
+          <select id="language-select">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="level-select">Select your level:</label>
+          <select id="level-select">
+            <option value="beginner">Beginner (Unit 1)</option>
+            <option value="medium">Medium (Unit 2)</option>
+            <option value="expert">Expert (Unit 4)</option>
+          </select>
+        </div>
+        <button type="button" class="btn accent" id="start-training">Start Training</button>
+        <div id="speech-warning" style="color: #b91c1c; font-weight: bold; margin-top: 1rem;"></div>
+      </form>
+    </div>
+    <div id="unit-section" style="display:none;">
+      <div class="center-card">
+        <div id="unit-title" class="unit-title"></div>
+        <div id="unit-prompt" class="unit-prompt"></div>
+        <div class="interaction-buttons">
+          <button class="btn accent" id="mic-btn">🎤 Speak</button>
+          <span id="mic-status"></span>
+        </div>
+        <div id="hindi-warning" style="display:none; color: #ff9800; text-align: center; margin: 1rem 0; padding: 0.5rem; background: rgba(255,152,0,0.1); border-radius: 5px;">
+          💡 टिप: यदि वॉइस रिकॉग्निशन काम नहीं कर रहा है, तो नीचे टेक्स्ट बॉक्स का उपयोग करें।
+        </div>
+        <form id="text-form" class="text-input-form">
+          <input type="text" id="text-input" placeholder="Type your answer..." autocomplete="off">
+          <button type="submit" class="btn accent">Send</button>
+        </form>
+        <form id="image-form" enctype="multipart/form-data" class="image-form">
+          <input type="file" id="image-input" name="image" accept=".jpg,.jpeg,.png">
+          <button type="submit" class="btn accent">Analyze Image</button>
+        </form>
+        <div id="image-result"></div>
+        <audio id="audio-player" style="display:none;"></audio>
+        <div id="unit-progress" class="unit-progress"></div>
+      </div>
+    </div>
+  </main>
+  <script src="/static/script.js"></script>
+</body>
+</html> 
